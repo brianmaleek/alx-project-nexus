@@ -1,97 +1,99 @@
-# Project Nexus Documentation
+# Building a Backend for an Online Poll System - ProDev BE
 
-This Project is a GitHub repository dedicated to documenting major learnings from the ProDev Backend Engineering program. This repository serves as a knowledge hub, showcasing understanding of backend engineering concepts, tools, and best practices acquired throughout the program.
+## Online Poll System Backend
 
-## Project Objective
+### Real-World Application
 
-The objective of this project is to:
+This project simulates backend development for applications requiring real-time data processing. Developers gain experience with: - Building scalable APIs for real-time voting systems. - Optimizing database schemas for frequent operations. - Documenting and deploying APIs for public access.
 
-- Consolidate key learnings from the ProDev Backend Engineering program.
-- Document major backend technologies, concepts, challenges, and solutions.
-- Serve as a reference guide for both current and future learners.
-- Foster collaboration between frontend and backend learners.
+### Overview
 
-## Key Features
+This case study focuses on creating a backend for an online poll system. The backend provides APIs for poll creation, voting, and real-time result computation. The project emphasizes efficient database design and detailed API documentation.
 
-- **Comprehensive Documentation**: Covers backend engineering concepts such as RESTful APIs, GraphQL APIs, Message Queues, CI/CD Pipelines, Celery & RabbitMQ, and System Design.
-- **Challenges & Solutions**: Includes real-world challenges faced and implemented solutions.
-- **Best Practices & Takeaways**: Highlights industry best practices and personal insights.
-- **Collaboration Hub**: Encourages teamwork between frontend and backend learners.
+### Project Goals
 
-## Collaboration - Key for Success
+The primary objectives of the poll system backend are: - `API Development`: Build APIs for creating polls, voting, and fetching results. - `Database Efficiency`: Design schemas optimized for real-time result computation. - `Documentation`: Provide detailed API documentation using Swagger.
 
-### Collaborate with Whom?
+### Technologies Used
 
-- **Fellow ProDev Frontend Learners**: Exchange ideas, develop synergies, organize study/coding sessions. Maximize your potential and that of your colleagues!
-- **ProDev Backend Learners**: Collaboration with backend learners is essential, as you will use their endpoints to complete your project.
+- `Django`: High-level Python framework for rapid development.
+- `PostgreSQL`: Relational database for poll and vote storage.
+- `Swagger`: For API documentation.
 
-## Where to Collaborate?
+### Key Features
 
-### Dedicated Discord Channel: `#ProDevProjectNexus`
+#### 1. Poll Management
 
-- Connect with both Frontend and Backend learners.
-- Use the channel to exchange ideas, ask/answer questions, and stay updated with announcements from the staff.
+- APIs to create polls with multiple options.
+- Include metadata such as creation date and expiry.
 
-**💡 ProDev Tip!** - Use the first week to communicate your chosen project. - Identify ProDev Frontend learners working on the same project to collaborate effectively.
+#### 2. Voting System
 
-## Tasks
+- APIs for users to cast votes.
+- Implement validations to prevent duplicate voting.
 
-### 0. Project Nexus Documentation
+#### 3. Result Computation
 
-### mandatory
+- Real-time calculation of vote counts for each option.
+- Efficient query design for scalability.
 
-#### Project Objective
+#### 4. API Documentation
 
-Create a GitHub repository named `alx-project-nexus` that serves as a documentation hub for major learnings from the `ProDev Backend Engineering program`. This repository will showcase your understanding of backend engineering concepts, tools, and best practices.
+- Use Swagger to document all endpoints.
+- Host documentation at `/api/docs` for easy access.
 
-### Instructions
+### Implementation Process
 
-#### Create a GitHub Repository
+#### Git Commit Workflow
 
-- Name the repository `alx-project-nexus`.
+#### Initial Setup:
 
-#### Add a README.md File
+```bash
+feat: set up Flask project with PostgreSQL
+```
 
-- Provide an overview of the `ProDev Backend Engineering program`.
-- Outline major learnings, including:
-  - **Key technologies covered**:
-    - Python, Django, REST APIs, GraphQL, Docker, CI/CD
-  - **Important backend development concepts**:
-    - Database Design, Asynchronous Programming, Caching Strategies
-  - **Challenges faced** and **solutions implemented**
-  - **Best practices** and **personal takeaways**
+Feature Development:
 
-#### Commit and Push the Changes
+```bash
+feat: implement poll creation and voting APIs
+feat: add results computation API
+```
 
-- Ensure **proper formatting** and **clarity** in the `README.md` file.
-- Use Markdown syntax for:
-  - Headings (`#,` `##,` `###`)
-  - Lists (`-,` `*,` `1.`)
-- Push the repository to `GitHub`.
+Optimization:
 
-### Collaboration - Key to Success
+```bash
+perf: optimize vote counting queries
+```
 
-#### Collaborate…with whom?
+Documentation:
 
-- **Fellow ProDev Backend Learners**:
-  - Exchange ideas, develop synergies, and organize study/coding sessions.
-- **ProDev Frontend Learners**:
-  - Collaborate with them since they will use your backend **API endpoints** to complete their project.
+```bash
+feat: integrate Swagger documentation
+docs: update README with API usage
+```
 
-#### 🗣 Where will you collaborate?
+#### Submission Details
 
-- 💬 Dedicated Discord Channel: **#ProDevProjectNexus**
-  - Connect with both **Frontend** and **Backend** learners.
-  - Share ideas, ask/answer questions, and stay updated with announcements.
+- `Deployment`: Host the API and Swagger documentation.
 
-#### 💡 ProDev Tip!
+#### Evaluation Criteria
 
-**📢 Use the first week to:**
+#### 1. Functionality
 
-- Communicate **which project** you are developing.
-- Identify **ProDev FE learners** working on the same project to ensure seamless collaboration.
+- Polls and options are created and stored accurately.
+- Voting works without duplication errors.
 
-**Repo:**
+#### 2. Code Quality
 
-- **GitHub repository**: **alx-project-nexus**
-- **File**: [README.md](./README.md)
+- Code adheres to Django best practices and is modular.
+- PostgreSQL models are efficient and normalized.
+
+#### 3. Performance
+
+- Vote counting queries are optimized for scalability.
+- Real-time results are computed efficiently.
+
+#### 4. Documentation
+
+- Swagger documentation is detailed and accessible.
+- README includes setup instructions and usage examples.
