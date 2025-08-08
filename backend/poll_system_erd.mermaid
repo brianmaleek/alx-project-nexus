@@ -1,0 +1,65 @@
+erDiagram
+    %% Django's built-in User model (auth.User)
+    User {
+        int id PK
+        string username
+        string email
+        string first_name
+        string last_name
+        boolean is_active
+        boolean is_staff
+        boolean is_superuser
+        datetime date_joined
+        datetime last_login
+    }
+
+    %% pollSystemAccounts App Models
+    UserProfile {
+        int id PK
+        int user_id FK "OneToOne to User"
+        text bio
+        date birth_date
+        url avatar
+        datetime created_at
+        datetime updated_at
+    }
+
+    %% pollSystemApi App Models
+    Poll {
+        int id PK
+        string title
+        text description
+        int created_by_id FK "ForeignKey to User"
+        datetime created_at
+        datetime expires_at
+        boolean is_active
+        boolean allow_multiple_votes
+    }
+
+    Option {
+        int id PK
+        int poll_id FK "ForeignKey to Poll"
+        string text
+        int order
+    }
+
+    Vote {
+        int id PK
+        int user_id FK "ForeignKey to User"
+        int option_id FK "ForeignKey to Option"
+        datetime voted_at
+        string ip_address
+    }
+
+    %% Relationships
+    User ||--|| UserProfile : "OneToOne"
+    User ||--o{ Poll : "creates (polls_created)"
+    User ||--o{ Vote : "casts (votes)"
+    Poll ||--o{ Option : "has (options)"
+    Option ||--o{ Vote : "receives (votes)"
+
+    %% Additional relationship notes
+    %% Vote has indirect relationship to Poll through Option
+    %% Unique constraints: (user, option) in Vote table
+    %% Unique constraints: (poll, text) in Option table
+    
